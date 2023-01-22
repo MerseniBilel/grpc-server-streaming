@@ -1,0 +1,16 @@
+syntax = "proto3";
+package counter;
+
+option go_package = "./counter";
+
+service counterService{
+    rpc InitCounter (counterRequest) returns (stream counterResponse);
+}
+
+message counterRequest{
+    int32 initCounter = 1;
+}
+
+message counterResponse{
+    int32 counter = 1;
+}
