@@ -24,7 +24,6 @@ func (s *counterServiceImplement) InitCounter(in *pb.CounterRequest, srv pb.Coun
 	go func() {
 		for i := 0; i < int(in.InitCounter); i++ {
 			SendStream(i, srv, quit)
-
 		}
 	}()
 
